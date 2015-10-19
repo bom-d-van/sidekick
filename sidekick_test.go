@@ -61,7 +61,7 @@ func TestSkipCase(t *testing.T) {
 
 func ExampleSkipCase() {
 	// skip case or cases: go test -skip 1 -skip 2 --> skip case 1 and 2
-	// Or: go test -case 1 -case 2 --> run case 1 and case 2
+	// Or: go test -case 1 -case 2 --> run case 1 and 2
 	for i, c := range cases {
 		if SkipCase(i) {
 			continue
