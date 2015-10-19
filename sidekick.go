@@ -1,3 +1,4 @@
+// Package sidekick implements some Go test helper flags and functions.
 package sidekick
 
 import (
@@ -12,12 +13,12 @@ func (ss stringSlice) String() string      { return strings.Join(ss, ",") }
 func (ss *stringSlice) Set(s string) error { *ss = append(*ss, s); return nil }
 
 var (
-	skips stringSlice
-	cases stringSlice
-
 	// Debug is similar to testing.Verbose. Set to true when using flag
 	// -debug.
 	Debug bool
+
+	skips stringSlice
+	cases stringSlice
 )
 
 func init() {
