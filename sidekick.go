@@ -4,6 +4,7 @@ package sidekick
 import (
 	"flag"
 	"fmt"
+	"log"
 	"strings"
 )
 
@@ -25,6 +26,8 @@ func init() {
 	flag.Var(&skips, "skip", "skip test case")
 	flag.Var(&cases, "case", "run test case")
 	flag.BoolVar(&Debug, "debug", false, "enter debug mode")
+
+	log.SetFlags(log.Lshortfile | log.LstdFlags)
 }
 
 // SkipCase checks if a test case should be run based on flags -skip or -case.
