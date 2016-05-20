@@ -14,7 +14,7 @@ func init() {
 
 func TestSkipCase(t *testing.T) {
 	oldArgs := os.Args
-	for _, c := range []struct {
+	for j, c := range []struct {
 		input        []string
 		intResult    map[int]bool
 		stringResult map[string]bool
@@ -30,6 +30,7 @@ func TestSkipCase(t *testing.T) {
 			stringResult: map[string]bool{"1": true, "2": true},
 		},
 	} {
+		t.Logf("case %d\n", j)
 		os.Args = append(oldArgs, c.input...)
 		skips = []string{}
 		cases = []string{}
